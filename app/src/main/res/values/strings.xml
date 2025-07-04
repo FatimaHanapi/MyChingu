@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">My Chingu</string>
+
+    <string name="hint_student_id_login">Student ID</string>
+    <string name="hint_password_login">Password</string>
+    <string name="button_login">Login</string>
+    <string name="text_register_prompt">Don\'t have an account? Register here.</string>
+
+    <string name="hint_student_id_register">Enter Student ID</string>
+    <string name="hint_name_register">Enter Your Name</string>
+    <string name="hint_email_register">Enter Email</string>
+    <string name="hint_password_register">Enter Password</string>
+    <string name="hint_confirm_password_register">Confirm Password</string>
+    <string name="button_register">Register</string>
+    <string name="text_login_prompt">Already have an account? Login here.</string>
+
+    <string name="error_empty_field">This field cannot be empty</string>
+    <string name="error_passwords_mismatch">Passwords do not match</string>
+    <string name="error_student_id_exists">Student ID already exists</string>
+    <string name="error_invalid_credentials">Invalid Student ID or password</string>
+    <string name="registration_success">Registration successful!</string>
+    <string name="logout_message">Logged out successfully.</string>
+    <string name="login_success">Login successful!</string>
+
 </resources>

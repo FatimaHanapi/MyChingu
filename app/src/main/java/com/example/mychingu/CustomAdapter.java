@@ -42,12 +42,14 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder._id_text.setText(_id.get(position));
+        holder._id_text.setText(String.valueOf(position + 1));
         holder.gender_text.setText(gender.get(position));
         holder.friend_name.setText(friend_name.get(position));
         holder.friend_dob.setText(friend_dob.get(position));
         holder.friend_phone.setText(friend_phone.get(position));
         holder.friend_email.setText(friend_email.get(position));
+
+
 
         // Use a standard OnClickListener to avoid the issue with lambdas
         holder.mainLayout.setOnClickListener(new View.OnClickListener() {

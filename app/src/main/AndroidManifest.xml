@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.mychingu">
@@ -16,28 +17,48 @@
         android:theme="@style/Theme.MyChingu"
         tools:targetApi="31">
 
-        <!-- Main Activity - Launch entry point of the app -->
         <activity
-            android:name=".MainActivity"
-            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+            android:name=".LoginActivity"
             android:exported="true"
-            android:label="My Chingu">
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+            android:label="Login to My Chingu">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <!-- Update Activity -->
+        <activity
+            android:name=".RegisterActivity"
+            android:parentActivityName=".LoginActivity"
+            android:label="Register for My Chingu" />
+
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+            android:exported="false"
+            android:label="My Chingu">
+        </activity>
+
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" android:label="Login to My Chingu">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <activity
             android:name=".UpdateActivity"
             android:parentActivityName=".MainActivity" />
 
-        <!-- Add Activity - Add Friend Activity -->
         <activity
             android:name=".AddActivity"
             android:label="Add Friend"
             android:parentActivityName=".MainActivity" />
+
 
     </application>
 
