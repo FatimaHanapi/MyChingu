@@ -194,7 +194,13 @@ public class MainActivity extends AppCompatActivity {
         } else if (itemId == R.id.logout) { // Handle logout
             confirmLogoutDialog();
             return true;
+        } else if (itemId == R.id.birthdaywish) {
+            Intent i = new Intent(MainActivity.this, FriendlistActivity.class);
+            i.putExtra("user_id", currentUserId);
+            startActivity(i);
+            return true;
         }
+
         return super.onOptionsItemSelected(item);
     }
 

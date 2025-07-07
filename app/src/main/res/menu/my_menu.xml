@@ -15,8 +15,15 @@
         app:showAsAction="always"/>
 
     <item
+        android:id="@+id/birthdaywish"
+        android:title="Birthday Wish"
+        app:showAsAction="never" />
+
+    <item
         android:id="@+id/logout"
         android:title="Logout"
         app:showAsAction="never" />
+
+
 
 </menu>

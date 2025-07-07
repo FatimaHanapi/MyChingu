@@ -59,6 +59,9 @@
             android:label="Add Friend"
             android:parentActivityName=".MainActivity" />
 
+        <activity android:name=".FriendlistActivity" />
+        <activity android:name=".BirthdayWishActivity" />
+
 
     </application>
 
