@@ -34,18 +34,15 @@ public class BirthdayWishAdapter extends RecyclerView.Adapter<BirthdayWishAdapte
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        // Pakai layout item yang sesuai
         View view = LayoutInflater.from(context).inflate(R.layout.activity_friendlistitem, parent, false);
         return new MyViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(BirthdayWishAdapter.MyViewHolder holder, int position) {
-        // Set nama & nomor telepon aja (karena layout item-nya cuma punya 2)
         holder.friendNameTextView.setText(name.get(position));
         holder.friendPhoneTextView.setText(phone.get(position));
 
-        // Ketika item diklik, buka halaman BirthdayWishActivity
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, BirthdayWishActivity.class);
             intent.putExtra("friend_name", name.get(position));
@@ -56,7 +53,7 @@ public class BirthdayWishAdapter extends RecyclerView.Adapter<BirthdayWishAdapte
 
     @Override
     public int getItemCount() {
-        return id.size(); // Atau name.size(), bebas asalkan ukurannya konsisten
+        return id.size();
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
