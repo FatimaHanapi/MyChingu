@@ -41,16 +41,6 @@
         </activity>
 
         <activity
-            android:name=".LoginActivity"
-            android:exported="true"
-            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" android:label="Login to My Chingu">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-        <activity
             android:name=".UpdateActivity"
             android:parentActivityName=".MainActivity" />
 
@@ -62,6 +52,9 @@
         <activity android:name=".FriendlistActivity" />
         <activity android:name=".BirthdayWishActivity" />
 
+        <activity android:name=".ReportActivity"
+            android:label="Reports"
+            android:parentActivityName=".MainActivity" />
 
     </application>
 

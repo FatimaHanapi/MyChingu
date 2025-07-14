@@ -8,6 +8,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log; // Added for logging database operations
 import android.widget.Toast;
 import androidx.annotation.Nullable;
+import java.util.HashMap;
+import java.util.Map;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -337,4 +339,30 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     //endregion Friend Management Methods
+
+    public Map<String, Integer> getGenderCounts(int userId) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT gender, COUNT(*) FROM friends WHERE user_id = ? GROUP BY gender", new String[]{String.valueOf(userId)});
+        Map<String, Integer> result = new HashMap<>();
+        while (cursor.moveToNext()) {
+            String gender = cursor.getString(0);
+            int count = cursor.getInt(1);
+            result.put(gender, count);
+        }
+        cursor.close();
+        return result;
+    }
+
+    public int[] getBirthdayMonthCounts(int userId) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT strftime('%m', date_of_birth) AS month, COUNT(*) FROM friends WHERE user_id = ? GROUP BY month", new String[]{String.valueOf(userId)});
+        int[] monthCounts = new int[12];
+        while (cursor.moveToNext()) {
+            int month = Integer.parseInt(cursor.getString(0)) - 1;
+            int count = cursor.getInt(1);
+            monthCounts[month] = count;
+        }
+        cursor.close();
+        return monthCounts;
+    }
 }

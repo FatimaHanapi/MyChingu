@@ -61,6 +61,11 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
         add_button = findViewById(R.id.add_button);
         // button_logout = findViewById(R.id.button_logout); // REMOVED: No longer in layout
+        Button btnReport = findViewById(R.id.btnViewReport);
+        btnReport.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, ReportActivity.class);
+            startActivity(intent);
+        });
 
         // Initialize the ArrayLists
         _id = new ArrayList<>();
