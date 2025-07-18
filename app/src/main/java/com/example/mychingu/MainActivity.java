@@ -10,6 +10,8 @@ import android.widget.Button; // This import is still needed if you have other b
 import android.widget.Toast;
 import android.util.Log;
 
+import java.lang.reflect.Method;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -178,7 +180,19 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.my_menu, menu);
-        return super.onCreateOptionsMenu(menu);
+
+        // Force icons to show in overflow menu
+        if (menu.getClass().getSimpleName().equals("MenuBuilder")) {
+            try {
+                Method m = menu.getClass().getDeclaredMethod("setOptionalIconsVisible", boolean.class);
+                m.setAccessible(true);
+                m.invoke(menu, true);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        return true;
     }
 
     @Override
