@@ -79,6 +79,21 @@ public class MainActivity extends AppCompatActivity {
         customAdapter = new CustomAdapter(MainActivity.this, this, _id, gender, friend_name, friend_dob, friend_phone, friend_email);
         recyclerView.setAdapter(customAdapter);
 
+        SearchView searchView = findViewById(R.id.searchView);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                storeDataInArray(query);
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                storeDataInArray(newText);
+                return true;
+            }
+        });
+
         // Load the data from the database NOW (AFTER adapter is initialized)
         storeDataInArray(null);
 
@@ -163,24 +178,6 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.my_menu, menu);
-
-        MenuItem searchItem = menu.findItem(R.id.action_search);
-        SearchView searchView = (SearchView) searchItem.getActionView();
-
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                storeDataInArray(query); // Perform search when query is submitted
-                return true;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                storeDataInArray(newText); // Perform search as text changes
-                return true;
-            }
-        });
-
         return super.onCreateOptionsMenu(menu);
     }
 
