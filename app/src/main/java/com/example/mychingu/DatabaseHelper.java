@@ -354,15 +354,52 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public int[] getBirthdayMonthCounts(int userId) {
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT strftime('%m', date_of_birth) AS month, COUNT(*) FROM friends WHERE user_id = ? GROUP BY month", new String[]{String.valueOf(userId)});
         int[] monthCounts = new int[12];
-        while (cursor.moveToNext()) {
-            int month = Integer.parseInt(cursor.getString(0)) - 1;
-            int count = cursor.getInt(1);
-            monthCounts[month] = count;
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.rawQuery("SELECT date_of_birth FROM friends WHERE user_id = ?", new String[]{String.valueOf(userId)});
+
+        if (cursor != null) {
+            while (cursor.moveToNext()) {
+                String dob = cursor.getString(cursor.getColumnIndexOrThrow("date_of_birth"));
+                if (dob != null && !dob.isEmpty()) {
+                    Log.d("DOB_Check", "Fetched DOB: " + dob);
+
+                    String[] parts;
+                    if (dob.contains("-")) {
+                        parts = dob.trim().split("-");
+                    } else if (dob.contains("/")) {
+                        parts = dob.trim().split("/");
+                    } else {
+                        Log.e("DOB_Format", "Unsupported format: " + dob);
+                        continue;
+                    }
+
+                    if (parts.length == 3) {
+                        try {
+                            int month = Integer.parseInt(parts[1].trim()); // Trim any whitespace
+                            Log.d("DOB_Parsed", "Month: " + month);
+                            if (month >= 1 && month <= 12) {
+                                monthCounts[month - 1]++;
+                            }
+                        } catch (NumberFormatException e) {
+                            Log.e("DOB_Error", "Invalid month format in DOB: " + dob);
+                        }
+                    } else {
+                        Log.e("DOB_Format", "Unexpected format: " + dob);
+                    }
+                }
+            }
+            cursor.close();
         }
-        cursor.close();
+
+        db.close();
+
+        // Debug final counts
+        for (int i = 0; i < monthCounts.length; i++) {
+            Log.d("MonthFinalCount", "Month " + (i + 1) + ": " + monthCounts[i]);
+        }
+
         return monthCounts;
     }
 }

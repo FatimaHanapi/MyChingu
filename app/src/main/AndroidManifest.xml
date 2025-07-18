@@ -52,7 +52,8 @@
         <activity android:name=".FriendlistActivity" />
         <activity android:name=".BirthdayWishActivity" />
 
-        <activity android:name=".ReportActivity"
+        <activity
+            android:name=".ReportActivity"
             android:label="Reports"
             android:parentActivityName=".MainActivity" />
 
