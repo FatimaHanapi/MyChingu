@@ -128,7 +128,7 @@
         android:layout_marginEnd="32dp"
         android:text="@string/button_register"
         android:textSize="18sp"
-        android:textColor="ffffff"
+        android:textColor="#e6d8c7"
         android:backgroundTint="#003e80"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
