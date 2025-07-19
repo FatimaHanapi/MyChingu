@@ -63,16 +63,17 @@
         android:id="@+id/friend_name2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="text"
-        android:hint="Enter Friend Name"
-        android:textColor="#003e80"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/radioGroupGender2"
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"/>
+        android:layout_marginEnd="32dp"
+        android:ems="10"
+        android:hint="Enter Friend Name"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textColor="#003e80"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radioGroupGender2" />
 
     <!-- EditText for Date of Birth -->
     <EditText
@@ -112,16 +113,17 @@
         android:id="@+id/friend_email2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        android:textColor="#003e80"
-        android:hint="Enter Email"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/friend_phone2"
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"/>
+        android:layout_marginEnd="32dp"
+        android:ems="10"
+        android:hint="Enter Email"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        android:textColor="#003e80"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/friend_phone2" />
 
     <!-- Save Button to Submit Friend Info -->
     <Button
@@ -132,6 +134,7 @@
         android:layout_marginTop="40dp"
         android:layout_marginEnd="32dp"
         android:text="Update"
+        android:backgroundTint="#18246B"
         android:textSize="20sp"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
@@ -147,7 +150,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="32dp"
-        android:background="#18246B"
+        android:backgroundTint="#18246B"
         android:text="Delete"
         android:textAllCaps="false"
         android:textColor="@color/red"

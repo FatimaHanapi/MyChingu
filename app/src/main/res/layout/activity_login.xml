@@ -8,6 +8,15 @@
 
     android:fitsSystemWindows="true" tools:context=".LoginActivity">
 
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="drawable/logo"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="App Logo"
+        android:scaleType=centerInside"/>
+
     <TextView
         android:id="@+id/textViewLoginTitle"
         android:layout_width="wrap_content"

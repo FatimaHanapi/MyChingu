@@ -2,7 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="E6D8C7">
+    android:background="#f9d48b">
 
     <LinearLayout
         android:orientation="vertical"
@@ -15,7 +15,7 @@
             android:layout_height="wrap_content"
             android:text="Gender Distribution"
             android:textStyle="bold"
-            android:textColor="1F526B"
+            android:textColor="#003e80"
             android:textSize="18sp" />
 
         <com.github.mikephil.charting.charts.PieChart
@@ -27,7 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Birthdays by Month"
-            android:textColor="1F526B"
+            android:textColor="#003e80"
             android:textStyle="bold"
             android:textSize="18sp"
             android:layout_marginTop="20dp"/>
