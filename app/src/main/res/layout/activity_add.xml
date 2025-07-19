@@ -18,6 +18,7 @@
         android:layout_marginTop="160dp"
         android:layout_marginEnd="32dp"
         android:text="Gender"
+        android:textColor="#003e80"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,14 +46,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:text="Male" />  <!-- Default selection -->
+            android:text="Male"
+            android:textColor="#003e80"/>  <!-- Default selection -->
 
         <!-- RadioButton for Female -->
         <RadioButton
             android:id="@+id/radioFemale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Female" />
+            android:text="Female"
+            android:textColor="#003e80"/>
     </RadioGroup>
 
     <!-- EditText for Friend Name -->
@@ -63,6 +66,9 @@
         android:ems="10"
         android:inputType="text"
         android:hint="Enter Friend Name"
+        android:backgroundTint="#607D8B"
+        android:textColorHint="#90A4AE"
+        android:textColor="#003e80"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/radioGroupGender"
@@ -78,6 +84,9 @@
         android:ems="10"
         android:inputType="none"
         android:hint="Enter Date of Birth (DD/MM/YYYY)"
+        android:backgroundTint="#607D8B"
+        android:textColorHint="#90A4AE"
+        android:textColor="#003e80"
         android:focusable="false"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -94,6 +103,9 @@
         android:ems="10"
         android:inputType="phone"
         android:hint="Enter Phone Number"
+        android:backgroundTint="#607D8B"
+        android:textColorHint="#90A4AE"
+        android:textColor="#003e80"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/friend_dob"
@@ -109,6 +121,9 @@
         android:ems="10"
         android:inputType="textEmailAddress"
         android:hint="Enter Email"
+        android:backgroundTint="#607D8B"
+        android:textColorHint="#90A4AE"
+        android:textColor="#003e80"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/friend_phone"
@@ -127,6 +142,7 @@
         android:text="Add"
         android:textSize="20sp"
         android:textAllCaps="false"
+        android:backgroundTint="#003e80"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
