@@ -180,18 +180,6 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.my_menu, menu);
-
-        // Force icons to show in overflow menu
-        if (menu.getClass().getSimpleName().equals("MenuBuilder")) {
-            try {
-                Method m = menu.getClass().getDeclaredMethod("setOptionalIconsVisible", boolean.class);
-                m.setAccessible(true);
-                m.invoke(menu, true);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-
         return true;
     }
 

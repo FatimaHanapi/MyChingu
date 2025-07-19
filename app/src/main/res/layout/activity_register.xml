@@ -4,17 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg1"
     tools:context=".RegisterActivity">
 
     <TextView
         android:id="@+id/textViewRegisterTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Register for My Chingu"
+        android:text="Register to My Chingu"
         android:textSize="28sp"
         android:textStyle="bold"
-        android:textColor="?attr/colorPrimary"
-        android:layout_marginTop="40dp"
+        android:textColor="#1F526B"
+        android:layout_marginTop="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
