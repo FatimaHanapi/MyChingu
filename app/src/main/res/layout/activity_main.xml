@@ -6,6 +6,7 @@
     android:id="@+id/mainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#f9d48b"
     tools:context=".MainActivity">
 
     <!-- Quote -->
@@ -18,7 +19,7 @@
         android:textStyle="bold"
         android:gravity="center"
         android:layout_marginTop="16dp"
-        android:textColor="@android:color/black"
+        android:textColor="#003e80"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -26,8 +27,8 @@
     <!-- Friend Image -->
     <ImageView
         android:id="@+id/friendImage"
-        android:layout_width="206dp"
-        android:layout_height="179dp"
+        android:layout_width="343dp"
+        android:layout_height="269dp"
         android:layout_marginTop="8dp"
         android:contentDescription="Friend illustration"
         android:src="@drawable/friend"
@@ -41,6 +42,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:queryHint="Search friend..."
+        android:background="#c1eeff"
         android:layout_marginTop="8dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
@@ -67,6 +69,7 @@
         android:src="@drawable/ic_add"
         android:contentDescription="Add new friend"
         android:layout_margin="16dp"
+        android:backgroundTint="#003e80"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

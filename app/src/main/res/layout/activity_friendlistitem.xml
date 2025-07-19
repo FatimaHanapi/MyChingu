@@ -17,13 +17,16 @@
             android:layout_height="wrap_content"
             android:text="Name"
             android:textStyle="bold"
+            android:textColor="#003e80"
             android:textSize="18sp"/>
 
         <TextView
             android:id="@+id/showfriend_phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Phone"/>
+            android:text="Phone"
+            android:textColor="#003e80" />
+
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>
